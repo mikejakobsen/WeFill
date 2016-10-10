@@ -1,0 +1,24 @@
+{
+  "name": "WeFill",
+  "description": "WeFill",
+  "main": "server.js",
+  "authors": [
+    "Mike Jakobsen"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mikejakobsen/WeFill",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.6",
+    "angularjs-geolocation": "~0.1.1",
+    "bootstrap": "~3.3.5",
+    "modernizr": "~3.0.0"
+  }
+}

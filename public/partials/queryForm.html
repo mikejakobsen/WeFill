@@ -1,0 +1,58 @@
+<div class="col-xs-12 col-md-5">
+
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+			<h2 class="panel-title text-center">Find vandsteder</h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body">
+
+            <!-- Creates Form -->
+            <form name ="queryForm">
+
+                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+                <div class="form-group">
+                    <label for="latitude">Din Latitude</label>
+                    <input type="text" class="form-control" id="latitude" placeholder="*" ng-model="formData.latitude" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Din Longitude</label>
+                    <input type="text" class="form-control" id="longitude" placeholder="*" ng-model="formData.longitude" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="distance">Max. distance</label>
+                    <input type="text" class="form-control" id="distance" placeholder="5" ng-model="formData.distance">
+                </div>
+
+                <div class="form-group">
+                    <label for="minrating">Min. Rating</label>
+                    <input type="number" class="form-control" id="minrating" placeholder="1" ng-model="formData.minrating">
+                </div>
+                <div class="form-group">
+                    <label for="maxrating">Max Age</label>
+                    <input type="number" class="form-control" id="maxrating" placeholder="5" ng-model="formData.maxrating">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="verified" id="radiomale" value="True" ng-model="formData.verified"> <strong>Hent kun verificerede steder.</strong>
+							<!-- A boolean, is handy later on -->
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Query button. Note that its tied to queryPlaces() function from queryCtrl.  -->
+                <button type="submit" class="btn btn-danger btn-block" ng-click="queryPlaces()">Søg</button>
+            </form>
+        </div>
+
+        <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
+        <div ng-show="queryCount>0" class="panel-footer">
+                <p class="text-center">Fedt! Vi fandt {{queryCount}} steder.</p>
+        </div>
+    </div>
+</div>
